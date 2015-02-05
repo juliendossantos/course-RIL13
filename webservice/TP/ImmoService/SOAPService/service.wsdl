@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Partie 1 : Définition -->
+<definitions nameService="immoService"
+	targetNamespace="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService"
+	xmlns:tns="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/gestionBien"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<!-- Pas très bien compris cette histoire de schéma apparemment celà fonctionne sans...
+
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:bienStruct">
+	  <xsd:complexType name="bienStruct">
+    	<xsd:all>
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="id" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ref" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="desc" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="adresse" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ville" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="cp" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="nb_pieces" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="superficie" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="prix" type="s:double" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="action" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="type" type="s:string" />
+      </xsd:all>
+		</xsd:complexType>    
+  </xsd:schema> 
+
+	<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:searchStruct">
+	  <xsd:complexType name="searchStruct">
+    	<xsd:all>
+				<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ref" type="s:string" />
+				<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="type" type="s:int" />
+				<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ville" type="s:string" />
+				<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="superficie" type="s:int" />
+      </xsd:all>
+		</xsd:complexType>    
+  </xsd:schema>
+
+	<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:insertOrUpdateBiens">
+	  <xsd:complexType name="insertOrUpdateBiens">
+    	<xsd:all>
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ref" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="desc" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="adresse" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ville" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="cp" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="nb_pieces" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="superficie" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="prix" type="s:double" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="action" type="s:string" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="type" type="s:int" />
+      </xsd:all>
+		</xsd:complexType>    
+  </xsd:schema>  -->
+
+	<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:statistique">
+	  <xsd:complexType name="statistique">
+    	<xsd:all>
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="month" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="nb_vente" type="s:int" />
+				<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="nb_location" type="s:int" />
+      </xsd:all>
+		</xsd:complexType>    
+  </xsd:schema> 
+
+	<!-- Message -->
+	<message name="loginRequest">
+		<part name="ref" type="xsd:string"/>
+		<part name="mdp" type="xsd:string"/>		
+	</message>
+	<message name="loginResponse">
+		<part name="token" type="xsd:token"/>
+	</message>
+
+	<message name="listRequest">
+		<part name="token" type="xsd:string"/>
+	</message>
+	<message name="listResponse">
+		<part name="listBien" type="xsd:bienStruct" />
+	</message>
+
+	<message name="searchRefRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="ref" type="xsd:string"/>
+	</message>
+	<message name="searchRefResponse">
+		<part name="ref" type="xsd:bienStruct" />
+	</message>
+
+	<message name="searchRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="search" type="xsd:searchStruct"/>
+	</message>
+	<message name="searchResponse">
+		<part name="searchBien" type="xsd:bienStruct" />
+	</message>
+
+	<message name="insertOrUpdateRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="search" type="xsd:insertOrUpdateBiens"/>
+	</message>
+	<message name="insertOrUpdateResponse">
+		<part name="searchBien" type="xsd:boolean" />
+	</message>
+
+	<message name="venteRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="id" type="xsd:int"/>
+		<part name="date_vente" type="xsd:string"/>
+	</message>
+	<message name="venteResponse">
+		<part name="vente" type="xsd:boolean" />
+	</message>
+
+	<message name="locationRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="id" type="xsd:int"/>
+		<part name="date_debut" type="xsd:string"/>
+		<part name="date_fin" type="xsd:string"/>
+	</message>
+	<message name="locationResponse">
+		<part name="vente" type="xsd:boolean" />
+	</message>
+
+	<message name="statistiqueRequest">
+		<part name="token" type="xsd:string"/>
+		<part name="data" type="xsd:string"/>
+	</message>
+	<message name="statistiqueResponse">
+		<part name="statistique" type="xsd:statistique" />
+	</message>
+
+	<!-- Port type -->
+	<portType name="loginPortType">
+		<operation name="login">
+			<input message="tns:loginRequest" />
+			<output message="tns:loginResponse" />
+		</operation>
+	</portType>
+
+	<portType name="listPortType">
+		<operation name="listBiens">
+			<input message="tns:listRequest" />
+			<output message="tns:listResponse" />
+		</operation>
+	</portType>
+
+	<portType name="searchRefPortType">
+		<operation name="searchRefBiens">
+			<input message="tns:searchRefRequest" />
+			<output message="tns:searchRefResponse" />
+		</operation>
+	</portType>
+
+	<portType name="searchPortType">
+		<operation name="searchBiens">
+			<input message="tns:searchRequest" />
+			<output message="tns:searchResponse" />
+		</operation>
+	</portType>
+
+	<portType name="insertOrUpdatePortType">
+		<operation name="insertOrUpdate">
+			<input message="tns:insertOrUpdateRequest" />
+			<output message="tns:insertOrUpdateResponse" />
+		</operation>
+	</portType>
+
+	<portType name="ventePortType">
+		<operation name="vente">
+			<input message="tns:venteRequest" />
+			<output message="tns:venteResponse" />
+		</operation>
+	</portType>
+
+	<portType name="locationPortType">
+		<operation name="location">
+			<input message="tns:locationRequest" />
+			<output message="tns:locationResponse" />
+		</operation>
+	</portType>
+
+	<portType name="statistiquePortType">
+		<operation name="statistique">
+			<input message="tns:statistiqueRequest" />
+			<output message="tns:statistiqueResponse" />
+		</operation>
+	</portType>
+
+	<!-- Binding -->
+	<binding name="loginBinding" type="tns:loginPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<operation name="login">
+			<soap:operation soapAction="urn:login"/>
+			<input>
+				<soap:body namespace="urn:logIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:logOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="listBinding" type="tns:listPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="listBiens">
+			<soap:operation soapAction="urn:listBiens"/>
+			<input>
+				<soap:body namespace="urn:listIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:listOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="searchRefBinding" type="tns:searchRefPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="searchRefBiens">
+			<soap:operation soapAction="urn:searchRefBiens"/>
+			<input>
+				<soap:body namespace="urn:searchRefIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:searchRefOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="searchBinding" type="tns:searchPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="searchBiens">
+			<soap:operation soapAction="urn:searchBiens"/>
+			<input>
+				<soap:body namespace="urn:searchIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:searchOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="insertOrUpdateBinding" type="tns:insertOrUpdatePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="insertOrUpdate">
+			<soap:operation soapAction="urn:insertOrUpdate"/>
+			<input>
+				<soap:body namespace="urn:insertOrUpdateIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:insertOrUpdateOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="venteBinding" type="tns:ventePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="vente">
+			<soap:operation soapAction="urn:vente"/>
+			<input>
+				<soap:body namespace="urn:venteIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:venteOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="locationBinding" type="tns:locationPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="location">
+			<soap:operation soapAction="urn:location"/>
+			<input>
+				<soap:body namespace="urn:locationIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:locationOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<binding name="statistiqueBinding" type="tns:statistiquePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="statistique">
+			<soap:operation soapAction="urn:statistique"/>
+			<input>
+				<soap:body namespace="urn:statistiqueIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:statistiqueOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+	</binding>
+
+	<!--  Service -->
+	<service name="gestionService">
+		<documentation>Renvoie le résultat d'une opération mathématique</documentation>
+		<port name="loginPort" binding="loginBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="listPort" binding="listBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="searchRefPort" binding="searchRefBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="searchPort" binding="searchBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="insertOrUpdatePort" binding="insertOrUpdateBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="ventePort" binding="venteBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="locationPort" binding="locationBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>
+		<port name="statistiquePort" binding="statistiqueBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/TP/ImmoService/SOAPService/soap_service.php"/>
+		</port>	</service>
+
+</definitions>

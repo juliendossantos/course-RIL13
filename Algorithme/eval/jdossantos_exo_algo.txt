@@ -1,0 +1,202 @@
+C.
+
+Structure Carte
+	Nom en Caractère * 5
+	Point en Entier * 2
+Fin Structure
+
+Procedure tirer_carte(Cartes en Référence, nbCartes en Référence, CarteTirer en Référence)
+
+	tirage <- Ent(Alea() * nbCartes)
+
+	CarteTirer() <- Cartes(tirage)
+
+	Pour i = tirage à nbCartes-2
+		Cartes(i) <- Cartes(i+1)
+	i Suivant
+
+	nbCartes <- nbCartes - 1
+	Redim Cartes(nbCartes)
+
+FinProcedure
+
+Function question() en Booléen
+	Choix <- ""
+
+	TantQue Choix <> "O" OU Choix <> "N"
+		
+		Ecrire "Voulez vous tirer une carte ? (O/N)"
+
+		Lire Reponse
+
+		Si Choix = "N" Alors
+			reponse <- Faux
+		Sinon Si Choix = "O" Alors
+			reponse <- Vrai
+		FinSi
+
+	FinTantQue
+
+	Renvoyer reponse
+
+FinFunction
+
+Function afficher_main(Mains en Carte, nbCarte en Entier) en Chaine
+	
+	outPut <- "La main contient"
+
+	Pour i <- 0 à nbCarte - 1
+		outPut <- outPut & Mains(i).Nom
+	i Suivant
+
+	Renvoyer outPut
+
+FinFunction
+
+Function afficher_score(Mains en Carte, nbCarte en Entier) en Entier
+
+	Score <- 0
+
+	Pour i <- 0 à nbCarte -1
+		Si Find("AS", Carte(i).Nom) <> -1 ET Score + Carte(i).Point > 21 Alors
+			Score <- Score + 1		
+		Sinon
+			Score <- Score + Carte(i).Point
+		FinSi
+	i Suivant
+
+	Renvoyer Score
+
+FinFunction
+
+Procedure verif_score(ScoreJ en Entier, ScoreB en Entier, jGagne en Référence, bGagne en Référence, jTire en Référence, bTire en Référence, finPartie en Référence)
+	
+
+	Si (NON(jTire) ET NON(bTire)) OU finPartie OU ScoreJ = 21 OU ScoreB = 21 Alors
+
+		Si ScoreJ > ScoreB Alors
+			jGagne <- Vrai
+		SinonSi ScoreB > ScoreJ Alors
+			bGagne <- Vrai
+		FinSi
+
+	FinSI
+
+FinProcedure
+
+Variables Cartes(52), MainJ(), MainB() en Carte
+Variables Carte, CarteTirer en Carte
+Variables nbCartes, carteB, carteJ, ScoreB, ScoreJ en Entier
+Variables jTire, bTire, jGagne, bGagne, finPartie, nPartie en Booléen
+Variables Reponse en Chaine
+Début
+
+nPartie <- Vrai
+
+TantQue nPartie
+
+	nPartie <- Faux
+	finPartie <- Faux
+	jTire <- Vrai
+	bTire <- Vrai
+	nbCartes <- -1
+	carteB <- 0
+	carteJ <- 0
+	Reponse <- ""
+
+	Ouvrir "jeux_cates.txt" sur 1 en Lecture
+	Tantque Non EOF(1)
+		
+		LireFichier 1, Carte
+
+		nbCartes <- nbCartes + 1
+		Cartes(nbCartes) <- Carte
+
+	FinTantQue
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteB <- carteB + 1
+	Redim MainB(carteB)
+	MainB(carteB-1) <- CarteTirer
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteB <- carteB + 1
+	Redim MainB(carteB)
+	MainB(carteB-1) <- CarteTirer
+
+	ScoreB <- afficher_score(MainB, carteB)
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteJ <- carteJ + 1
+	Redim MainJ(carteJ)
+	MainJ(carteJ-1) <- CarteTirer
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteJ <- carteJ + 1
+	Redim MainJ(carteJ)
+	MainJ(carteJ-1) <- CarteTirer
+
+	ScoreJ <- afficher_score(MainJ, carteJ)
+
+	Ecrire afficher_main(MainB, 1)
+	Ecrire afficher_main(MainJ, carteJ)
+	Ecrire ScoreJ
+
+	Appeler verif_score(ScoreJ, ScoreB, jGagne, bGagne, jTire, bTire, finPartie)
+
+	TantQue NON(finPartie)
+		
+		Si ScoreB >= 17 Alors
+			bTire <- false
+		FinSi
+
+		jTire <- question()
+
+		Si bTire Alors
+			Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+			carteJ <- carteJ + 1
+			Redim MainJ(carteJ)
+			MainJ(carteJ-1) <- CarteTirer
+			ScoreB <- afficher_score(MainB, carteB)
+		FinSi
+
+		Si jTire Alors
+			Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+			carteJ <- carteJ + 1
+			Redim MainJ(carteJ)
+			MainJ(carteJ-1) <- CarteTirer
+			ScoreJ <- afficher_score(MainJ, carteJ)
+		FinSi
+
+		Ecrire afficher_main(MainJ, carteJ)
+		Ecrire ScoreJ
+		
+		Appeler verif_score(ScoreJ, ScoreB, jGagne, bGagne, jTire, bTire, finPartie)
+
+	FinTantQue
+
+	Ecrire afficher_main(MainB, carteB)
+
+	Si jGagne Alors
+		Ecrire "Vous avez gagné avec un score de", ScoreJ
+	Sinon Si bGagne Alors
+		Ecrire "La banque gagne avec un score de", ScoreB
+	FinSi
+
+
+	Tanque Reponse <> "O" OU Reponse <> "N"
+		
+		Ecrire "Voulez-vous faire une nouvelle partie ? (O/N)"
+		Lire Reponse
+
+		Si Reponse = "O" Alors
+			nPartie <- Vrai
+		SinonSi Reponse = "N" Alors
+			nPartie <- faux
+		FinSi
+
+	FinTantQue
+
+FinTantQue
+
+Fin

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine on
+	RewriteBase /RIL_13/webservice/rest/products_ws/
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule (.*) api.php [L]
+
+</IfModule>

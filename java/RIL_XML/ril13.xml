@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RIL13>
+  <stagiaires>
+    <stagiaire code="BU01" sexe="Petit">
+      <nom>BUR</nom>
+      <prenom>Jean-Vincent</prenom>
+    </stagiaire>
+    <stagiaire code="CA01" sexe="M">
+      <nom>CARLESSO</nom>
+      <prenom>Mathieu</prenom>
+    </stagiaire>
+    <stagiaire code="DS01" sexe="M">
+      <nom>DOS SANTOS</nom>
+      <prenom>Julien</prenom>
+    </stagiaire>
+    <stagiaire code="HE01" sexe="M">
+      <nom>HERMEL</nom>
+      <prenom>Nicolas</prenom>
+    </stagiaire>
+    <stagiaire code="MO01" sexe="M">
+      <nom>MOIZEAU</nom>
+      <prenom>Cedric</prenom>
+    </stagiaire>
+    <stagiaire code="TR01" sexe="M">
+      <nom>TROQUEREAU</nom>
+      <prenom>Benjamin</prenom>
+    </stagiaire>
+  </stagiaires>
+</RIL13>

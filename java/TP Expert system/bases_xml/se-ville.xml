@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Expert>
+  <faits>
+  	<fait etiquette="parcs verdoyants" valeur="true" />
+  	<fait etiquette="avenues larges" valeur="true" />
+  	<fait etiquette="monuments" valeur="true" />
+  	<fait etiquette="restaurants 3 toques" valeur="true" />
+  	<fait etiquette="ville ancienne" valeur="true" />
+  </faits>
+  <regles>
+  	<regle indice="1">
+  		<hypotheses>
+  			<hypothese etiquette="belle ville" valeur="true" />
+  			<hypothese etiquette="très bons restaurants" valeur="true" />
+  		</hypotheses>
+  		
+  		<conclusion etiquette="ville méritant le voyage" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="2">
+  		<hypotheses>
+  			<hypothese etiquette="ville historique" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="ville méritant le voyage" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="3">
+  		<hypotheses>
+  			<hypothese etiquette="autochtones accueillants" valeur="true" />
+  			<hypothese etiquette="traditions folkloriques" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="ville méritant le voyage" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="4">
+  		<hypotheses>
+  			<hypothese etiquette="monuments" valeur="true" />
+  			<hypothese etiquette="végétation abondante" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="belle ville" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="5">
+  		<hypotheses>
+  			<hypothese etiquette="tradition culinaire" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="bons restaurants" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="6">
+  		<hypotheses>
+  			<hypothese etiquette="restaurants 3 étoiles" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="très bons restaurants" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="7">
+  		<hypotheses>
+  			<hypothese etiquette="restaurants 3 toques" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="très bons restaurants" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="8">
+  		<hypotheses>
+  			<hypothese etiquette="musées" valeur="true" />
+  			<hypothese etiquette="ville ancienne" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="ville historique" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="9">
+  		<hypotheses>
+  			<hypothese etiquette="provence" valeur="true" />
+  			<hypothese etiquette="bord de mer" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="autochtones accueillants" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="10">
+  		<hypotheses>
+  			<hypothese etiquette="parcs verdoyants" valeur="true" />
+  			<hypothese etiquette="avenues larges" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="végétation abondante" valeur="true" />
+  		
+  	</regle>
+  </regles>
+</Expert>
+

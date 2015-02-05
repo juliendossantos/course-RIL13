@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<se1>
+	<baseDeFaits>
+		<fait label="A" valeur="true"/>
+		<fait label="C" valeur="true"/>
+		<fait label="D" valeur="true"/>
+		<fait label="E" valeur="true"/>
+		<fait label="G" valeur="true"/>
+		<fait label="H" valeur="true"/>
+		<fait label="K" valeur="true"/>
+	</baseDeFaits>
+	<baseDeRegles>
+		<regle index="1" labelConclusion="I" valeurConclusion="true">
+			<hypothese label="K" valeur="true" />
+			<hypothese label="L" valeur="true" />
+			<hypothese label="M" valeur="true" />
+		</regle>
+		<regle index="2" labelConclusion="Q" valeurConclusion="true">
+			<hypothese label="I" valeur="true" />
+			<hypothese label="L" valeur="true" />
+			<hypothese label="J" valeur="true" />
+		</regle>
+		<regle index="3" labelConclusion="B" valeurConclusion="true">
+			<hypothese label="C" valeur="true" />
+			<hypothese label="D" valeur="true" />
+			<hypothese label="E" valeur="true" />
+		</regle>
+		<regle index="4" labelConclusion="Q" valeurConclusion="true">
+			<hypothese label="A" valeur="true" />
+			<hypothese label="B" valeur="true" />
+		</regle>
+		<regle index="5" labelConclusion="Q" valeurConclusion="true">
+			<hypothese label="L" valeur="true" />
+			<hypothese label="N" valeur="true" />
+			<hypothese label="O" valeur="true" />
+			<hypothese label="P" valeur="true" />
+		</regle>
+		<regle index="6" labelConclusion="R" valeurConclusion="true">
+			<hypothese label="C" valeur="true" />
+			<hypothese label="H" valeur="true" />
+		</regle>
+		<regle index="7" labelConclusion="S" valeurConclusion="true">
+			<hypothese label="R" valeur="true" />
+			<hypothese label="J" valeur="true" />
+			<hypothese label="M" valeur="true" />
+		</regle>
+		<regle index="8" labelConclusion="B" valeurConclusion="true">
+			<hypothese label="F" valeur="true" />
+			<hypothese label="H" valeur="true" />
+		</regle>
+		<regle index="9" labelConclusion="F" valeurConclusion="true">
+			<hypothese label="G" valeur="true" />
+		</regle>
+	</baseDeRegles>
+</se1>

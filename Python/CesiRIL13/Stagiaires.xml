@@ -1,0 +1,5 @@
+<users>
+    <user id="1" name="Martin" promo="RIL12" salle="Castillon"/>
+    <user id="2" name="Dubois" promo="RIL12" salle="Castillon"/>
+    <user id="3" name="Dupin" promo="RIL14" salle="Cap Ferret"/>
+</users>

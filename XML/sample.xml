@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml-stylesheet type="text/css" href="style.css"?> lié une feuille de style CSS -->
+<?xml-stylesheet type="text/xsl" href="format2.xsl"?> <!-- lié un style XSL -->
+<racine>
+	<cd>
+		<titre>Ceremonials</titre>
+		<artiste>Florence + the machine</artiste>
+		<pays>UK</pays>
+		<labels>
+			<nom>Universal Republic</nom>
+		</labels>
+		<prix>7.60</prix>
+		<annee>2011</annee>
+	</cd>
+	<cd>
+		<titre>AM</titre>
+		<artiste>Artic Monkeys</artiste>
+		<pays>UK</pays>
+		<labels>
+			<nom>Domino Records</nom>
+		</labels>
+		<prix>8.90</prix>
+		<annee>2013</annee>
+	</cd>
+	<cd>
+		<titre>If You Wait</titre>
+		<artiste>London Grammar</artiste>
+		<pays>UK</pays>
+		<labels>
+			<nom>Warner/Chappell Music</nom>
+		</labels>
+		<prix>10.90</prix>
+		<annee>2013</annee>
+	</cd>
+	<cd>
+		<titre>Funeral</titre>
+		<artiste>Arcade Fire</artiste>
+		<pays>Canada</pays>
+		<labels>
+			<nom>Sinnamon Records</nom>
+			<nom>Spunk!</nom>
+		</labels>
+		<prix>29.90</prix>
+		<annee>2004</annee>
+	</cd>
+	<cd>
+		<titre>You Could Have It So Much Better</titre>
+		<artiste>Franz Ferdinand</artiste>
+		<pays>UK</pays>
+		<labels>
+			<nom>Domino Records</nom> 
+			<nom>Domino</nom>
+		</labels>
+		<prix>15.90</prix>
+		<annee>2005</annee>
+	</cd>
+	<cd>
+		<titre>Tsoin-tsoin</titre>
+		<artiste>Pouet-pouet</artiste>
+		<pays></pays>
+		<labels>
+		</labels>
+		<prix></prix>
+		<annee></annee>
+	</cd>
+</racine>

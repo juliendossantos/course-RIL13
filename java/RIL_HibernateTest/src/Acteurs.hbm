@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.rila13.hibernate">
+	<class name="Acteurs" table="acteurs">
+		<id
+			column="codeActeur"
+			name="CodeActeur"
+			type="integer"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="nomActeur"
+			length="50"
+			name="NomActeur"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="prenomActeur"
+			length="50"
+			name="PrenomActeur"
+			not-null="true"
+			type="string"
+		 />
+		<!-- please tell Joe Hudson that the type 'LONGBLOB' could not be resolved.. defaulting to java.lang.String -->
+		<property
+			column="image"
+			name="Image"
+			not-null="true"
+			type="java.lang.String"
+		 />
+		<property
+			column="anneeNaissanceActeur"
+			length="10"
+			name="AnneeNaissanceActeur"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="sexeActeur"
+			length="10"
+			name="SexeActeur"
+			not-null="true"
+			type="integer"
+		 />
+
+		<set inverse="true" name="JoueSet">
+			<key column="codeA" />
+			<one-to-many class="Joue" />
+		</set>
+	</class>
+</hibernate-mapping>

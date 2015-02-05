@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Partie 1 : Définition -->
+<definitions nameService="operationService"
+	targetNamespace="http://localhost/RIL_13/webservice/operation_ws/"
+	xmlns:tns="http://localhost/RIL_13/webservice/operationService"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+	<message name="opeRequest">
+		<part name="value1" type="xsd:double"/>
+		<part name="value2" type="xsd:double"/>		
+	</message>
+	<message name="opeResponse">
+		<part name="value" type="xsd:double" />
+	</message>
+
+	<portType name="operationPortType">
+		<operation name="add">
+			<input message="tns:opeRequest" />
+			<output message="tns:opeResponse" />
+		</operation>
+		<operation name="subtract">
+			<input message="tns:opeRequest" />
+			<output message="tns:opeResponse" />
+		</operation>
+		<operation name="multiply">
+			<input message="tns:opeRequest" />
+			<output message="tns:opeResponse" />
+		</operation>
+		<operation name="divide">
+			<input message="tns:opeRequest" />
+			<output message="tns:opeResponse" />
+		</operation>
+	</portType>
+
+	<binding name="operationBinding" type="tns:operationPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<!-- addition -->
+		<operation name="add">
+			<soap:operation soapAction="urn:add"/>
+			<input>
+				<soap:body namespace="urn:addIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:addOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+
+		<!-- Soustraction  -->
+		<operation name="subtract">
+			<soap:opeartion soapAction="urn:subtract"/>
+			<input>
+				<soap:body namespace="urn:subtractIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:subtractOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+
+		<!-- Multiplication -->
+		<operation name="multiply">
+			<soap:opeartion soapAction="urn:multiply"/>
+			<input>
+				<soap:body namespace="urn:multiplyIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:multiplyOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+
+		<!-- Division -->
+		<operation name="divide">
+ 			<soap:opeartion soapAction="urn:divide"/>
+			<input>
+				<soap:body namespace="urn:divideIn" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:divideOut" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation> 
+	</binding>
+
+	<service name="immoService">
+		<documentation>Service distribuer de gestion de bien.</documentation>
+		<port name="operationPort" binding="operationBinding">
+			<soap:address location="http://localhost/RIL_13/webservice/soap/operation_ws/soap_service.php"/>
+		</port>
+	</service>
+
+</definitions>

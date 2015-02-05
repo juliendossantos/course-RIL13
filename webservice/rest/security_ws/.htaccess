@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine on
+	RewriteBase /RIL_13/webservice/rest/security_ws/
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^test.php$ test.php [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([\w]+)/([\d]+)$ api.php?request=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ api.php?request=$1 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^.*$ api.php [QSA,NC,L]
+
+</IfModule>

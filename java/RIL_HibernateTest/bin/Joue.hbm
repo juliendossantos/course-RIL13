@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.rila13.hibernate">
+	<class name="Joue" table="joue">
+		<composite-id class="JouePK" name="Id">
+			<key-many-to-one
+				class="Films"
+				column="codeF"
+				name="CodeF"
+			 />
+			<key-many-to-one
+				class="Acteurs"
+				column="codeA"
+				name="CodeA"
+			 />
+		</composite-id>
+		<property
+			column="casting"
+			length="50"
+			name="Casting"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

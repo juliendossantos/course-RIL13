@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Expert>
+  <faits>
+  	<fait etiquette="rhizome" valeur="true" />
+  	<fait etiquette="fleur" valeur="true" />
+  	<fait etiquette="graine" valeur="true" />
+  	<fait etiquette="1-cotylédone" valeur="true" />
+  </faits>
+  <regles>
+  	<regle indice="1">
+  		<hypotheses>
+  			<hypothese etiquette="fleur" valeur="true" />
+  			<hypothese etiquette="graine" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="phanérograme" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="2">
+  		<hypotheses>
+  			<hypothese etiquette="phanérograme" valeur="true" />
+  			<hypothese etiquette="graine nue" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="sapin" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="3">
+  		<hypotheses>
+  			<hypothese etiquette="phanérograme" valeur="true" />
+  			<hypothese etiquette="1-cotylédone" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="monocotylédone" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="4">
+  		<hypotheses>
+  			<hypothese etiquette="phanérograme" valeur="true" />
+  			<hypothese etiquette="2-cotylédone" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="dicotylédone" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="5">
+  		<hypotheses>
+  			<hypothese etiquette="monocotylédone" valeur="true" />
+  			<hypothese etiquette="rhizome" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="muguet" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="6">
+  		<hypotheses>
+  			<hypothese etiquette="dicotylédone" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="anémone" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="7">
+  		<hypotheses>
+  			<hypothese etiquette="monocotylédone" valeur="true" />
+  			<hypothese etiquette="rhizome" valeur="false" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="lilas" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="8">
+  		<hypotheses>
+  			<hypothese etiquette="feuille" valeur="true" />
+  			<hypothese etiquette="fleur" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="cryptogame" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="9">
+  		<hypotheses>
+  			<hypothese etiquette="cryptogame" valeur="true" />
+  			<hypothese etiquette="racine" valeur="false" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="mousse" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="10">
+  		<hypotheses>
+  			<hypothese etiquette="cryptogame" valeur="true" />
+  			<hypothese etiquette="racine" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="fougère" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="11">
+  		<hypotheses>
+  			<hypothese etiquette="feuilles" valeur="false" />
+  			<hypothese etiquette="plante" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="thallophyte" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="12">
+  		<hypotheses>
+  			<hypothese etiquette="thallophyte" valeur="true" />
+  			<hypothese etiquette="chlorophyle" valeur="true" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="algue" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="13">
+  		<hypotheses>
+  			<hypothese etiquette="thallophyte" valeur="true" />
+  			<hypothese etiquette="chlorophyle" valeur="false" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="champignon" valeur="true" />
+  		
+  	</regle>
+  	<regle indice="14">
+  		<hypotheses>
+  			<hypothese etiquette="feuille" valeur="false" />
+  			<hypothese etiquette="fleur" valeur="false" />
+  			<hypothese etiquette="plante" valeur="false" />
+  		</hypotheses>
+  		
+  			<conclusion etiquette="colibacille" valeur="true" />
+  		
+  	</regle>
+  </regles>
+</Expert>
+

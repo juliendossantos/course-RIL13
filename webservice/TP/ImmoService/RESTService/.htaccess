@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine on
+	RewriteBase /RIL_13/webservice/TP/ImmoService/RESTService/
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	# Si le format de l'url est une requéte suivi d'un id ex listBiens/1
+	RewriteRule ^([\w]+)/([\d]+)$ rest_service.php?request=$1&id=$2 [QSA,NC,L]
+	
+	# Si le format de l'url est une requéte suivi d'une ref ex listBiens/CI31634
+	RewriteRule ^([\w]+)/([\w]+)$ rest_service.php?request=$1&ref=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ rest_service.php?request=$1 [QSA,NC,L]
+
+</IfModule>

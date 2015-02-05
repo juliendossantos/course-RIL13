@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animal>
+  <faits>
+  </faits>
+  <regles>
+  	<regle indice="1">
+  		<hypotheses>
+  			<hypothese etiquette="animal a poils" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est mammifère" valeur="true" />  
+  	</regle>
+  	<regle indice="2">
+  		<hypotheses>
+  			<hypothese etiquette="animal donne lait" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est mammifère" valeur="true" />
+  	</regle>
+  	<regle indice="3">
+  		<hypotheses>
+  			<hypothese etiquette="animal mange viande" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est carnivore" valeur="true" />
+  	</regle>
+  	<regle indice="4">
+  		<hypotheses>
+  			<hypothese etiquette="animal a dents pointues" valeur="true" />
+  			<hypothese etiquette="animal a griffes" valeur="true" />
+  			<hypothese etiquette="animal a yeux vers avant" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est carnivore" valeur="true" />
+  	</regle>
+  	<regle indice="5">
+  		<hypotheses>
+  			<hypothese etiquette="animal est mammifère" valeur="true" />
+  			<hypothese etiquette="animal a sabots" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est ongulé" valeur="true" />
+  	</regle>
+  	<regle indice="6">
+  		<hypotheses>
+  			<hypothese etiquette="animal est mammifère" valeur="true" />
+  			<hypothese etiquette="animal est carnivore" valeur="false" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est ongulé" valeur="true" />
+  	</regle>
+  	<regle indice="7">
+  		<hypotheses>
+  			<hypothese etiquette="animal est mammifère" valeur="true" />
+  			<hypothese etiquette="animal est carnivore" valeur="true" />
+  			<hypothese etiquette="animal a couleur brune" valeur="true" />
+  			<hypothese etiquette="animal a tâches sombres" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est guépard" valeur="true" />
+  	</regle>
+  	<regle indice="8">
+  		<hypotheses>
+  			<hypothese etiquette="animal est mammifère" valeur="true" />
+  			<hypothese etiquette="animal est carnivore" valeur="true" />
+  			<hypothese etiquette="animal a couleur brune" valeur="true" />
+  			<hypothese etiquette="animal a raies noires" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est tigre" valeur="true" />
+  	</regle>
+  	<regle indice="9">
+  		<hypotheses>
+  			<hypothese etiquette="animal est ongulé" valeur="true" />
+  			<hypothese etiquette="animal a long cou" valeur="true" />
+  			<hypothese etiquette="animal a longues pattes" valeur="true" />
+  			<hypothese etiquette="animal a tâches sombres" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est girafe" valeur="true" />
+  	</regle>
+  	<regle indice="10">
+  		<hypotheses>
+  			<hypothese etiquette="animal est ongulé" valeur="true" />
+  			<hypothese etiquette="animal a raies noires" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est zèbre" valeur="true" />
+  	</regle>
+  	<regle indice="11">
+  		<hypotheses>
+  			<hypothese etiquette="animal a plumes" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est oiseau" valeur="true" />
+  	</regle>
+  	<regle indice="12">
+  		<hypotheses>
+  			<hypothese etiquette="animal vole" valeur="true" />
+  			<hypothese etiquette="animal ponds oeufs" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est oiseau" valeur="true" />
+  	</regle>
+  	<regle indice="13">
+  		<hypotheses>
+  			<hypothese etiquette="animal est oiseau" valeur="true" />
+  			<hypothese etiquette="animal vole" valeur="false" />
+  			<hypothese etiquette="animal a long cou" valeur="true" />
+  			<hypothese etiquette="animal a longues pattes" valeur="true" />
+  			<hypothese etiquette="animal est noir et blanc" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est autruche" valeur="true" />
+  	</regle>
+  	<regle indice="14">
+  		<hypotheses>
+  			<hypothese etiquette="animal est oiseau" valeur="true" />
+  			<hypothese etiquette="animal vole" valeur="false" />
+  			<hypothese etiquette="animal nage" valeur="true" />
+  			<hypothese etiquette="animal est noir et blanc" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est pingouin" valeur="true" />
+  	</regle>
+  	<regle indice="15">
+  		<hypotheses>
+  			<hypothese etiquette="animal est oiseau" valeur="true" />
+  			<hypothese etiquette="animal est carnivore" valeur="true" />
+  		</hypotheses>
+  		<conclusion etiquette="animal est aigle" valeur="true" />
+  	</regle>
+  </regles>
+</animal>
+

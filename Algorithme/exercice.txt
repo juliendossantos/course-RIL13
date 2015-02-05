@@ -1,0 +1,1307 @@
+C avux 1
+A vaux 2
+B vaux 3
+
+A vaux 6
+B vaux 2
+
+A, B, C vaux 13
+
+A = 2
+B = 2
+
+///
+
+Variables A, B, C en Numérique
+Début
+A <- 1
+B <- 2
+C <- A
+A <- B
+B <- C
+Fin
+
+/////
+
+Variables A, B, C, D en Numérique
+Début
+A <- 1
+B <- 2
+C <- 3
+D <- A
+A <- B
+B <- C
+C <- D
+Fin
+
+/////
+
+Variables nb en numérique
+Début
+Ecrire "Entrez un nombre :"
+Lire nb
+Ecrire "Le carré de ", nb, " est ", nb^2
+Fin
+
+/////
+
+Variables prixHT, nbArticle, tauxTVA, prixTTC en numérique
+Début
+écrire "Renseignez le prix Hors taxe :"
+lire prixHT
+écrire "Renseignez le nombre d'article :"
+lire nbArticle
+écrire "Renseignez le taux de TVA (%):"
+lire tauxTVA
+tauxTVA <- tauxTVA/100
+prixTTC <- prixHT * nbArticle * (1 + tauxTVA)
+écrire "Le prix total TTC est de : ", prixTTC
+Fin
+
+/////
+
+Variables T1, T2, T3, T4 en Caractère
+Début
+t2 <- "vos beaux yeux"
+t3 <- "me font mourrir"
+t4 <- "d'amour"
+écrire T4 & T3 & T1 & T2
+écrire T2 & T1 & T3 & T4
+écrire T3 & T4 & T2 & T1
+écrire T1 & T2 & T3 & T4
+Fin
+
+////
+
+Variables chiffre en Numérique
+Début
+écrire "Saississez un nombre :"
+lire chiffre
+Si chiffre >= 0 alors
+	écrire "Votre chifre ", chiffre, " est positif"
+Sinon
+	écrire "Votre chifre ", chiffre, " est négatif"
+FinSi
+Fin
+
+/////
+
+Variables n1, n2 en Numérique
+Début
+écrire "Entrez deux nombres :"
+lire n1, n2
+Si (n1 > 0 ET n2 > 0) OU (n1 < 0 ET n2 < 0) Alors
+	écire "Leur produit est positif"
+Sinon
+	écrire "Leur produit est négatif"
+FinSi
+Fin
+
+//////
+
+Variables n1, n2, n3 en Caractére
+DEBUT
+écrire "Entrez trois nombre :"
+lire n1, n2, n3
+SI (n1 < n2) ET (n2 < n3) ALORS
+	"Ces noms sont classés alphabétiquement"
+SINON
+	"Ces noms ne sont pas classés alphabétiquement"
+FINSI
+FIN
+
+//////
+
+Variables age en Numérique
+DEBUT
+ECRIRE "Saissisez l'âge :"
+LIRE age
+SI age >= 6 ET age <= 7 ALORS
+	ECRIRE "Poussin"
+SINON SI age <= 9 ALORS
+	ECRIRE "Pupille"
+SINON SI age <= 11
+	ECRIRE "Minime"
+SINON SI age > 11
+	ECRIRE "Cadet"
+SINON
+	ECRIRE "trop petit"
+FINSI
+FIN
+
+//////
+
+Variables age en Numérique
+DEBUT
+ECRIRE "Saissisez l'âge :"
+LIRE age
+SI age >= 12 ALORS
+	ECRIRE "Cadet"
+SINONSI age >= 10 ALORS
+	ECRIRE "Minime"
+SINONSI age >= 8 ALORS
+	ECRIRE "Pupille" 
+SINONSI age >= 6 ALORS
+	ECRIRE "Poussin"
+SINON
+	ECRIRE "trop petit"
+FINSI
+FIN
+
+SI Tutu <= Toto+4 ET TATA <> "OK"  ALORS
+	Tutu <- Tutu - 1
+SINON
+	Tutu <- Tutu + 1
+FINSI
+
+/////
+
+Variable h, m en Numérique
+Variable nh, nm en Booléen
+DEBUT
+Ecrire "Entrer une heure et une minute :"
+lire h, m
+
+nh <- h+1 = 24
+nm <- m+1 = 60
+
+SI nm  ALORS
+	SI nh ALORS
+		h <- 0
+		m <- 0
+	SINON
+		h <- h+1
+		m <- 0
+	FINSI
+SINON
+	m <- m+1
+FINSI
+
+Ecrire "Dans une minute, il sera ", h, " heure(s) ", m
+FIN
+
+/////
+
+Variable h, m en Numérique
+DEBUT
+Ecrire "Entrer une heure et une minute :"
+lire h, m
+
+m <- m+1
+
+SI m = 60 ALORS
+	h <- h+1
+	m <- 0
+	SI h = 24 ALORS
+		h <- 0
+	FINSI
+FINSI
+
+Ecrire "Dans une minute, il sera ", h, " heure(s) ", m
+FIN
+
+/////
+
+Variables nPhotocopies, total en Numérique
+DEBUT
+Ecrire "Nombre de photocopie souhaitez :"
+lire nPhotocopies
+
+SI nPhotocopies > 30 ALORS
+	total <- (nPhotocopies-30)*0,08 + 20*0,09 + 10*0,10
+SINONSI nPhotocopies > 10 ALORS
+	total <- (nPhotocopies-10)*0,09 + 10*0,10
+SINON
+	total <- nPhotocopies*0,10
+FINSI
+
+Ecrire "Votre facture s'éléve à ", total, "€"
+FIN
+
+/////
+
+Variables age en numériques
+Variable sex en caractére
+Variables Cas1, Cas2 en booléen
+DEBUT
+
+Ecrire "Renseignez votre age et votre sex (h pour homme et f pour femme)"
+Lire age sex
+
+Cas1 <- sex = "h" ET age > 20
+Case2 <- sex = "f" ET (age >= 18 ET age <= 35)
+
+SI Cas1 OU Cas2
+		ecrire "imposable"
+SINON
+	ecrire "non imposable"
+FINSI
+
+FIN
+
+/////
+
+Variables C1, C2, C3, C4 en numérique
+Variables cas1, cas2, cas3, cas4 en booléen
+DEBUT
+Ecrire "Saisissez les scores des 4 candidats :"
+lire C1, C2, C3, C4
+
+cas1 = C1 > 50
+cas2 = C2  > 50 OU C3 > 50 OU C4 > 50
+cas3 = C1 > C2 ET C1 > C3 ET C1 > C4
+cas4 = C1 >= 12.5
+
+SI cas1 ALORS
+	ECRIRE "élu"
+SINON SI cas2 OU NON(cas4) ALORS
+	ecrire "Battu"
+SINON SI cas3 ALORS
+  ecrire "en tête participe au second tour"
+SINON
+  ecrire "Participe au second tour sans être en tête"
+FINSI
+
+FIN
+
+//////
+
+Variables age, perm, acc, assur  en numériques
+Variables C1, C2, C3 en booléen
+Variable situ en Caratère
+DEBUT
+écrire "Saisissez votre âge :"
+lire age
+Ecrire "Saisissez le nombre d'année de permis :"
+lire perm
+Ecrire "Saisissez le nombre d'accidents :"
+lire acc
+Ecrire "Saisisser le nombre d'années d'assurance :"
+lire assur
+
+C1 <- age < 25 ET permis < 2
+C2 <- age < 25 ET permis > 2
+C3 <- age > 25 ET permis < 2
+
+SI C1 ET acc = 0 ALORS
+
+	ecrire "tarif rouge"
+
+SINON SI C2 ALORS
+
+	SI acc = 0 ET assur > 5 ALORS
+		ecrire "tarif vert"
+	SINON SI acc = 0 OU acc = 1 et assur > 5 ALORS
+		ecrire "tarif orange"
+	SINON SI acc = 1 ALORS
+		ecrire "tarif rouge"
+	SINON
+		ecrire "refusé"
+
+SINON SI C3 ALORS
+	
+	SI acc = 0 ALORS
+		ecrire "tarif orange"
+	SI acc = 1 ALORS
+		ecrire "tarif rouge"
+	SINON
+		ecrire "refusé"
+
+SINON
+
+	SI acc = 0 ET assur > 5 ALORS
+		ecrire "tarif bleu"
+	SI acc = 0 OU (acc = 1 ET assur > 5) ALORS
+		ecrire "tarif vert"
+	SINON SI acc = 1 OU (acc = 2 et assur > 5) ALORS
+		ecrire "orange"
+	SINON SI acc = 2 ALORS
+		ecrire "tarif rouge"
+	SINON
+		ecrire "refusé"
+
+SINON
+	ecrire "refusé"
+FINSI
+
+FIN
+
+// CORRECTION :
+
+Variables age, perm, acc, assur  en numériques
+Variables C1, C2, C3 en booléen
+Variable situ en Caratère
+DEBUT
+écrire "Saisissez votre âge :"
+lire age
+Ecrire "Saisissez le nombre d'année de permis :"
+lire perm
+Ecrire "Saisissez le nombre d'accidents :"
+lire acc
+Ecrire "Saisisser le nombre d'années d'assurance :"
+lire assur
+
+C1 <- age >= 25
+C2 <- permis >= 2
+C3 <- assur >= 5
+
+SI NON(C1) ET NON(C2) ALORS
+	
+	SI acc = 0 ALORS
+		situ <- "rouge"
+	SINON
+		situ <- "non assurable"
+	FINSI
+
+SINONSI (NON(C1) ET C2) OU (C1 ET NON(C2)) ALORS
+
+	SI acc = 0 ALORS
+		situ <- "orange"
+	SINONSI acc = 1 ALORS
+		situ <- "rouge"
+	SINON
+		situ <- "non assurable"
+	FINSI
+
+SINON
+
+	SI acc = 0 ET assur > 5 ALORS
+		situ <- "tarif bleu"
+	SI acc = 0 OU (acc = 1 ET assur > 5) ALORS
+		situ <- "tarif vert"
+	SINON SI acc = 1 OU (acc = 2 et assur > 5) ALORS
+		situ <- "orange"
+	SINON SI acc = 2 ALORS
+		situ <- "tarif rouge"
+	SINON
+		situ <- "non assurable"
+	FINSI
+
+FINSI
+
+SI C3 ALORS
+	SI situ = "rouge" ALORS
+		situ <- "orange"
+	SINONSI situ = "orange" ALORS
+		situ <- "vert"
+	SINON
+		situ <- "bleu"
+	FINSI
+
+FINSI
+
+écrire "Situation : ", situ
+
+FIN
+
+Variables age, perm, acc, assur, P  en numériques
+Variables C1, C2, C3 en booléen
+Variable situ en Caratère
+DEBUT
+écrire "Saisissez votre âge :"
+lire age
+Ecrire "Saisissez le nombre d'année de permis :"
+lire perm
+Ecrire "Saisissez le nombre d'accidents :"
+lire acc
+Ecrire "Saisisser le nombre d'années d'assurance :"
+lire assur
+
+C1 <- age >= 25
+C2 <- permis >= 2
+C3 <- assur >= 5
+P <- 0
+
+SI NON(C1) ALORS
+	P <- P + 1
+FINSI
+
+SI NON(C2) ALORS
+	P <- P + 1
+FINSI
+
+P <- P + acc
+
+Si P < 3 ET C3
+	P <- P - 1
+FINSI
+
+SELON P FAIRE
+	CAS -1 :
+		situ <- "Bleu"
+		FINCAS
+	CAS 0 :
+		situ <- "vert"
+		FINCAS
+	CAS 1 :
+		situ <- "orange"
+		FINCAS
+	CAS 2 :
+		situ <- "rouge"
+		FINCAS
+FINSELON
+
+écrire "Situation : ", situ
+
+FIN
+
+///////
+
+Variables J, M, A, JMax en Numérique
+Variables VJ, VM, B en booléen
+DEBUT
+
+Ecrire "Entrez le numéro du jour"
+Lire J
+Ecrire "Entrez le numéro du mois"
+Lire M
+Ecrire "Entrez le numéro de l'année"
+Lire A
+
+B <- (A%400 = 0) OU (A%4=0 et NON(A%100=0))
+VM <- M >=1 ET M <= 12
+VJ <- J >= 1 ET J <= 31
+JMax <- 0
+
+Si VM et VJ ALORS
+
+	SI M = 2 ET B ALORS
+		JMax <- 29
+	SINONSI M = 2 ALORS
+		JMax <- 28
+	SINONSI M = 4 OU M = 6 ou M = 9 ou M = 11 ALORS
+		JMax <- 30
+	SINON
+		JMAx <- 31
+	FINSI
+
+	VJ <- J <= JMax
+
+FINSI
+
+SJ VM ET VJ ALORS
+	ecrire "la date est valide"
+SINON
+	ecrire "la date n'est pas valide"
+FINSI
+
+FIN
+
+// correction
+Variables J, M, A, JMax en Numérique
+Variables V1, V2, V3 en booléen
+DEBUT
+
+Ecrire "Entrez le numéro du jour"
+Lire J
+Ecrire "Entrez le numéro du mois"
+Lire M
+Ecrire "Entrez le numéro de l'année"
+Lire A
+
+B <- (A%400 = 0) OU (A%4=0 et NON(A%100=0))
+V1 <- (M = 1 OU M = 3 OU M = 5 OU M = 7 OU M = 8 OU M = 10 OU M = 12) et (J >=1 ET j <= 31)
+V2 <- (M = 4 OU M = 6 OU M = 9 OU M = 11) et (J >=1 ET j <= 30)
+V3 <- M = 2 ET B ET J >= 1 ET J <= 29
+V4 <- M = 2 ET J >=1 ET J <= 28
+
+SI V1 OU V2 OU V3 OU V4 ALORS
+	ecrire "date valide"
+SINON
+	ecrire "date non valide"
+FINSI
+
+FIN
+
+///////
+
+Tableau t(6) en Numérique
+DEBUT
+POUR i <- 0 à 6 
+	t(i) <- 0
+FINPOUR
+FIN
+
+////////
+
+Variables nb, neg, pos en Numérique
+Tableau t() en Numérique
+DEBUT
+
+ECRIRE "veuillez saisir le nombre de valeur"
+LIRE nb
+redim t(nb-1)
+
+neg <- 0
+pos <- 0
+
+POUR i <- 0 à nb-1
+	ECRIRE "veuillez saisir une valeur"
+	LIRE t(i)
+	SI t(i) > 0 ALORS
+		pos <- pos + 1
+	SINON
+		neg <- neg + 1
+	FINSI
+i suivant
+
+ECRIRE "Nombre de valeur positive :", pos ,"nombre de valeur negative :", neg
+
+FIN
+
+///////
+
+Variables som en Numérique
+DEBUT
+
+ECRIRE "nombre d'élement dans votre tableau ?"
+LIRE nbEle
+
+som <- 0
+POUR i <- 0 à nbEle - 1
+	som <- som + t(i)
+i suivant
+
+ECRIRE som
+
+FIN
+
+////////
+
+Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fu et à mesure dans un tableau.
+Le programme, une fois la saisir terminée, doit dire si les éléments du tableau sont tous consécutifs ou non.
+
+Tableau nombres() en Numérique
+Variables nb, i en Numériques
+Variables cons en Booléen
+DEBUT
+
+nb <- 1
+ECRIRE "Veuillez saisir des valeurs"
+
+TANTQUE nb > 0
+	SI nb > 0 ALORS
+		LIRE nombres(nb-1)
+		redim nombres(nb-1)
+		nb <- nb + 1
+	FINSI
+FINTANTQUE
+
+cons <- vrai
+
+POUR i <- 1 à nb
+	SI nombres(i) <> nombres(i-1) + 1
+		cons <- faux
+		SORTIR
+	FINSI
+i suivant
+
+SI cons
+	ecrire "les nombre sont sonsécutif"
+SINON
+	ecrire "les nombre ne sont pas consécutif"
+FINSI
+
+ECRIRE
+
+FIN
+
+// CORRECTION
+
+Variables Nb, i en Entier
+Tableau T() en Entier
+DEBUT
+
+ECRIR "Entrez le nombre de valeurs :"
+LIRE Nb
+
+Redim T(Nb-1)
+
+POUR i <- 0 à Nb -1
+	ECRIRE "Entrez le nombre numéro", i +1
+	LIRE T(i)
+i SUIVANT
+
+i <- 1
+
+TANTQUE T(i) = T(i-1) + 1 ET i < Nb -1
+	i <- i + 1
+FINTANTQUE
+
+SI T(i) = T(i-1) + 1 ALORS
+	ECRIRE "consécutifs"
+SINON
+	ECRIRE "Non consécutifs"
+FINSI
+
+FIN
+
+////////
+
+Ecrivez un algorithme qui invers l'order des éléments d'un tableau
+dont on suppose qu'il a été préalablement saisi (< les premiers seront les derniers)
+
+Tableau T() en Numérique
+Variables N, i, tmp en Numérique
+DEBUT
+
+POUR i <- 0 à (N-1)/2
+	tmp <- T(i)
+	T(i) <- T(N-1-i)
+	T(N-1-i) <- tmp
+i SUIVANT
+
+FIN
+
+//////
+
+Ecrivez un algo qui permette à l'utilisateur de supprimer une valeur d'un tablea préalablement saisi.
+L'utilisateur donnera l'indice de la valeur qu'il souaite supprimer.
+Attention, il ne s'agit pas de remettre une valeur à zéro, mais bel et bien de la supprimer du tableau lui-même ! Si le tableau de départ était :
+
+12   8   4   45   64   9   2
+
+Et que l'utilisateur souhaite supprimer la valeur d'indice 4, le nouveau tableau sera :
+
+12   8   4   45   9   2
+
+Tableau T(7) en Numérique
+Variables indice, nb en Numérique
+DEBUT
+
+nb <- 7
+
+ECRIRE "Saisir l'indice de la valeur que vus souhaitez supprimer:"
+LIRE indice
+
+POUR i = indice à nb-2
+	T(i) <- T(i+1)
+i suivant
+
+redim T(nb-1)
+
+FIN
+
+//////
+
+Ecrivez un algo qui trie un tableau dans l'ordre décroissant
+
+Tableau T(5) en Numérique
+Variable i, t, N en Numérique
+DEBUT
+
+// N vaux longeur du tableau
+
+POUR i <- 0 à N-2
+	SI T(i) < T(i+1) ALORS
+		t <- t(i)
+		t(i) <- t(i+1)
+		T(i+1) <- t
+		i = -1
+	FINSI
+i SUIVANT
+
+FIN
+
+// Tri par insertion
+
+Tableau T() en Numérique
+Variables N, posMax, temp en Numérique // vaux le nombre d'éléments du tableau
+DEBUT
+
+POUR i = 0 à N-2
+	posMax <- i
+	POUR j <- i + 1 à N - 1
+		SI t(j) < t(posMax) ALORS
+			posMax <- j
+		FINSI
+	j SUIVANT
+	temp <- T(posMax)
+	T(posMax) <- T(i)
+	T(i) <- temp
+i SUIVANT
+
+FIN
+
+// Tri par bulle
+
+Tableau T() en Numérique
+Variables N, posMax, temp en Numérique // vaux le nombre d'éléments du tableau
+DEBUT
+
+Trier <- Faux
+
+TANTQUE NON(Trier)
+
+	Trier <- Vrai
+	POUR i <- 0 à N-2
+		Si T(i) <= T(i+1) ALORS
+			temp <- T(i)
+			T(i) <- T(i+1)
+			T(i+1) <- temp
+			Trier <- Faux			
+		FINSI
+	i SUIVANT
+
+FINTANTQUE
+
+FIN
+
+//////////
+
+Ecrivez un algo qui recherche un mot saisi au clavier dans un dictionnaire.
+Le dictionnaire est supposé être dans un tableau préalablement rempli et Trié.
+
+Tableau T() en Numérique
+Variables N, M, S en Numérique // N vaux le nombre d'éléments du tableau et S le mot chercher
+Variable Trouver en Booléen
+DEBUT
+
+Trouver <- Faux
+M = (N-1)/2
+
+
+TANTQUE NON(Trouver) 
+
+		SI S > T[M] ALORS
+			M <- ((N-1)+M)/2 
+		SINON Si S < T[M] ALORS
+			M <- ((N-1)-M)/2
+		SINON SI S = T[M] ALORS
+			Trouver <- Vrai
+		FINSI
+
+FINTANTQUE
+
+
+FIN
+
+// CORRECTION
+
+Tableau Dico() en Chaine
+Variables Sup, Inf, Comp, N en Entier
+Variables Fini en Booléen
+Variables Mot en Chaine
+DEBUT
+
+ECRIRE "Entrez le mot à vérifier"
+LIRE Mot
+
+Sup <- N - 1 // N longeur tableau
+Inf <- 0
+Fini <- Faux
+
+
+TANTQUE NON(Fini)
+		
+		Comp <- (Sup + Inf) / 2
+
+		SI Mot < Dico[Comp] ALORS
+			Sup <- Comp - 1
+		SINON
+			Inf <- Comp + 1
+		FINSI
+
+		Fini <- Mot = Dico(Comp) OU Supe < Inf
+
+FINTANTQUE
+
+Si Mot = Dico(Comp) ALORS
+	ECRIRE "Trouver !"
+SINON
+	ECRIRE "Pas Trouver !"
+FINSI
+FIN
+
+///////
+
+Ecrivez un algo qui demande un mot à l'utilisateur et qui affiche à l'écran le nombre de lettres de ce mot (c'est vraiment tout bête)
+
+Variable Mot en caractére
+DEBUT
+
+ECRIRE "Sasir un mot"
+Lire Mot
+
+ecrire len(Mot)
+FIN
+
+//////
+
+Ecrivez un algo qui demande une phrase à l'utilisateur et qui affiche à l'écran le nombre de mots de cette phrase.
+On suppose que les mots ne sont séparées que par des expaces.
+
+Variables Phrase en Caractéres
+Variables Nb, i, Len, NbMot en entier
+DEBUT
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+Nb <- 0
+Len <- len(Phrase) - 1
+
+POUR i <- 0 à Len
+
+ SI Mid(Phrase,i,1) = " " ALORS
+ 	Nb <- Nb + 1
+ FINSI
+
+i SUIVANT
+
+NbMot <- Nb + 1
+
+ECRIRE NbMot
+
+FIN
+
+// Modifier l'ago pour afficher le nombre de voyelle dans la phrase.
+
+Tableau Voyelle(6) en Caractére 
+Variables Phrase en Caractéres
+Variables Nb, i, Len en entier
+DEBUT
+
+Voyelle(1) <- "a"
+Voyelle(2) <- "e"
+Voyelle(3) <- "i"
+Voyelle(4) <- "o"
+Voyelle(5) <- "u"
+Voyelle(6) <- "y"
+
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+Nb <- 0
+Len <- len(Phrase) - 1
+
+POUR i <- 0 à Len
+
+	POUR j <- 0 à 5
+	 	SI Mid(Phrase,i,1) = Voyelle(j) ALORS
+	 		Nb <- Nb + 1
+		FINSI
+	j SUIVANT
+
+i SUIVANT
+
+ECRIRE Nb
+
+FIN
+
+//
+
+Variables Phrase, Voyelle en Caractéres
+Variables Nb, i, Len en entier
+DEBUT
+
+Voyelle <- "aeiouy"
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+Nb <- 0
+Len <- len(Phrase) - 1
+
+POUR i <- 0 à Len
+
+	 	SI Find(Voyelle, Mid(Phrase,i,1)) <> -1 ALORS
+	 		Nb <- Nb + 1
+		FINSI
+
+i SUIVANT
+
+ECRIRE Nb
+
+FIN
+
+///////
+
+Ecrivez un algo qui demande une phrase à l'utilisateur.
+Celui-ci entrera ensuite le rang d'un caractère à supprimer, et la nouvlle phrase doit être affichée 
+(on doit réellement supprimer le caractère dans la variable qui stocke la phrase, et pas uniquement à l'écran)
+
+
+Variables Phrase en Caractéres
+Variables pos en entier
+DEBUT
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+ECRIRE "Saisir la position du caractère à supprimer"
+LIRE pos
+
+Phrase <- Left(Phrase, pos) & Right(Phrase, pos+1)
+
+ECRIRE Phrase
+
+FIN
+
+//
+
+Variables Phrase en Caractéres
+Variables pos en entier
+DEBUT
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+ECRIRE "Saisir la position du caractère à supprimer"
+LIRE pos
+
+Len <- Len(Phrase)-1
+
+SI pos < 0 OU pos > Len ALORS
+	ECRIRE "Position incorrect"
+SINON
+	Phrase <- Mid(Phrase, 0, pos) & Mid(Phrase, pos+1, (Len-pos)
+
+	ECRIRE Phrase
+FINSI
+
+FIN
+
+///////////
+
+Un des plus ancien systèmes de cryptographie (aisément déchiffrable) consite à décaler les lettres d'un message pour le rendre illisible.
+Ainsi, les 1 deviennent des B, les B des C, ect...
+Ecrivez un algo qui demande une phrase à l'utilisateur et qui la code selon ce principe.
+Comme dans le cas précédent, le codage doit s'effectuer au niveau de la variable stockant la phrase, et pas seulement à l'écran.
+
+Variables Phrase, Crypto, Lettre en Caractéres
+Variable i en entier
+DEBUT
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+POUR i <- 0 à Len(Phrase)-1
+
+	Lettre <- Chr(Asc(Mid(Phrase, i, 1))+1)
+
+	SI Lettre = "z" ALORS
+		Crypto <- "a"
+	SI Lettre = " " ALORS
+		Crypto <- " "
+	SINON
+		Crypto <- Lettre
+	FINSI 
+
+i SUIVANT
+
+Ecrire Crypto
+
+FIN
+
+// Correction
+
+Variables Phrase, Alpha, Crypto, Lettre en Caractéres
+Variable i, Pos en entier
+DEBUT
+
+Alpha <- "abcdefghijklmnopqrstuvwxyz"
+Crypto <- ""
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+POUR i <- 0 à Len(Phrase)-1
+
+	Lettre <- Mid(Phrase, i, 1)
+
+	Si Lettre = "z" ALORS
+		Crypto <- Crypto & "a"
+	SINON
+		Pos <- Find(Alpha, Lettre)
+		SI Pos > -1 ALORS
+			Crypto <- Crypto & Mid(Alpha, Pos+1, 1)
+		SINON
+			Crypto <- Crypto <- Lettre
+		FINSI
+	FINSI
+
+i SUIVANT
+
+Ecrire Crypto
+
+FIN
+
+// Modifier l'algo pour donner la possibilité a l'utilisateur le nombre de décalage de lettre pour l'encryptage, appeler aussi "chiffre de César"
+
+Variables Phrase, Alpha, Crypto, Lettre en Caractéres
+Variable i, Pos, Decal, Len en entier
+DEBUT
+
+Alpha <- "abcdefghijklmnopqrstuvwxyz"
+Len <- Len(Alpha)
+Crypto <- ""
+
+ECRIRE "Sasir une phrase"
+Lire Phrase
+
+ECRIRE "Décalage ?"
+LIRE Decal
+
+POUR i <- 0 à Len(Phrase)-1
+
+	Lettre <- Mid(Phrase, i, 1)
+	Pos <- Find(Alpha, Lettre)
+	
+	SI Pos > -1 ALORS
+		Pos <- Mod(Pos + Decal, 26)
+		Crypto <- Crypto & Mid(Alpha, Pos, 1)
+	SINON
+			Crypto <- Crypto <- Lettre
+	FINSI
+
+i SUIVANT
+
+Ecrire Crypto
+
+FIN
+
+/////////
+
+Ecrivez un algo qui demande à l'utilisateur un nombre entier.
+L'ordinateur affiche ensuite le message "Ce nombre est pair" ou "Ce nombre est impair" selon le cas, sans utiliser MODULO.
+
+Variables Nb, Mod en Entier
+DEBUT
+
+ECRIRE "Saisir un nombre"
+Lire Nb
+
+Mod <- Nb / 2
+
+SI Mod = Ent(Mod) ALORS
+	ECRIRE "Ce nombre est pair"
+SINON
+	ECRIRE "Ce nombre est impair"
+FINSI
+
+FIN
+
+///////
+
+Ecrivez les algo qui générent un nombre Glup aléatoire tel que...
+// 0 =< Glup < 2
+Glup <- Alea() * 2
+
+// -1 =< Glup < 1
+Glup <- Alea() * 2 - 1
+
+// 1,35 =< Glup < 1,65
+Glup <- Alea() * 30 + 1,35
+
+// Glup émule un dé à six faces
+Glup <- Ent(Alea() * 6) + 1
+
+// -10,5 =< Glup < 6,5
+Glup <- Alea() * 17 - 10,5
+
+// Glup émule la somme du jet simultané de deux dés à six faces
+Glup <- Ent(Alea() * 6) + Ent(Alea() * 6) + 2
+
+/////////
+
+Ecrivez un algo qui produit un résultat similaire au précédent,
+mais le fichier test "Exemple.txt" est cette fois de type délimité (caractère de délimitation : /).
+On produira à l'écran un affichage où pour des raisons esthétiques, ce caractère sera remplacé avec des espaces.
+
+Variables Truc, Lettre en Caractères
+Variables i en Numérique
+Début
+
+Ouvrir "Exemple.txt" sur 4 en Lecture
+Tantque Non EOF(5)
+
+	LireFichier 4, Truc
+
+	Pour i <- 0 à Len(Truc)-1
+		
+		Lettre <- Mid(Truc, i, 1)
+		
+		Si Mid(Truc, i, 1) = "/" ALORS
+			Ecrire " "
+		Sinon
+			Ecrire Lettre
+		FinSi
+	
+	i Suivant
+
+FinTantQue
+
+Fin
+
+/////////
+
+On travaille avec le fichier du carnet d'adresses en champs de largeur fixe.
+Ecrivez un algo qui permet à l'utilisateur de saisir au clavier un nouvelle individu qui sera ajouté à ce carnet d'adresses.
+
+Variable Nom*20, Prenom*20, Adresse*50, Tel*15, Email*20 en Caractères
+DEBUT
+
+ECRIRE "Saisir le nom :"
+Lire Nom
+
+ECRIRE "Saisir le prénom :"
+Lire Prenom
+
+ECRIRE "Saisir l'adresse :"
+Lire Adresse
+
+ECRIRE "Saisir le téléphone :"
+Lire Tel
+
+ECRIRE "Saisir l'e-mail :"
+Lire Email
+
+Ligne <- Nom & Prenom & Adresse & Tel & Email
+
+Ouvrir "Adresse.txt" sur 4 en Ajout
+EcrireFichier 4, Ligne
+Fermer 4
+FIN
+
+////////
+
+Même question, mais cette fois le carnet est supposé être triè par ordre alphabétique.
+L'individu doit donc être insérer au bon endroit dans le fichier.
+
+Tableau Lignes() en Caractère
+Variables Nom*20, Prenom*20, Tel*15, Email*20, Ligne, LigneFichier, NomFichier en Caractères
+Variables i, j en Numérique
+Variable Insérer en Booléen
+DEBUT
+
+ECRIRE "Saisir le nom :"
+Lire Nom
+
+ECRIRE "Saisir le prénom :"
+Lire Prenom
+
+ECRIRE "Saisir le téléphone :"
+Lire Tel
+
+ECRIRE "Saisir l'e-mail :"
+Lire Email
+
+Insérer <- Faux
+Ligne <- Nom & Prenom & Adresse & Tel & Email
+i <- -1
+
+Ouvrir "Adresses.txt" sur 1 en Lecture
+Tantque Non EOF(1)
+	
+	i <- i + 1
+	LireFichier 1, LigneFichier
+	Redim Lignes(i)
+	NomFichier <- Mid(Cligne, 1, 20);
+
+	Si NomFichier > Nom ET Insérer Alors	
+		Lignes(i) <- Ligne
+		Insérer <- Vrai
+		i <- i + 1
+		Redim Lignes(i)
+	FinSi
+
+	Lignes(i) <- LigneFichier
+
+FinTantQue
+Fermer 1
+
+Si Non(Insérer) Alors
+	i <- i + 1
+	Redim Lignes(i)
+	Lignes(i) <- Ligne
+FinSi
+
+Ouvrir "Adresses.txt" sur 2 en Ecriture
+Pour j <- 0 à i 
+	EcrireFichier 2, Lignes(j)
+j Suivant
+Fermer 2
+
+FIN
+
+// Même exercie mais avec une Structure
+
+Structure Contact
+	Nom en Caractère * 20
+	Prénom en Caractère * 15
+	Tel en Caractère * 10
+	Mail en Caractère * 20
+Fin Structure
+
+Tableau Lignes() en Contact
+Variable Ligne, LigneFichier en Contact
+Variables i, j en Numérique
+Variable Insérer en Booléen
+DEBUT
+
+ECRIRE "Saisir le nom :"
+Lire Ligne.Nom
+
+ECRIRE "Saisir le prénom :"
+Lire Ligne.Prénom
+
+ECRIRE "Saisir le téléphone :"
+Lire Ligne.Tel
+
+ECRIRE "Saisir l'e-mail :"
+Lire Ligne.Mail
+
+Insérer <- Faux
+i <- -1
+
+Ouvrir "Adresses.txt" sur 1 en Lecture
+Tantque Non EOF(1)
+	
+	i <- i + 1
+	Redim Lignes(i)
+	LireFichier 1, LigneFichier
+
+	Si LigneFichier.Nom > Ligne.Nom ET Insérer Alors	
+		Lignes(i) <- Ligne
+		Insérer <- Vrai
+		i <- i + 1
+		Redim Lignes(i)
+	FinSi
+
+	Lignes(i) <- LigneFichier
+
+FinTantQue
+Fermer 1
+
+Si Non(Insérer) Alors
+	i <- i + 1
+	Redim Lignes(i)
+	Lignes(i) <- Ligne
+FinSi
+
+Ouvrir "Adresses.txt" sur 2 en Ecriture
+Pour j <- 0 à i 
+	EcrireFichier 2, Lignes(j)
+j Suivant
+Fermer 2
+
+FIN
+
+//////
+
+Fonction Sum(a en Entier, b en Entier, c en Entier, d en Entier, e en Entier) en Entier
+	Renvoyer a + b + c + d + e
+FinFonction
+
+
+Procedure Sum(a en Entier par Valeur, b en Entier par Valeur, c en Entier par Référence)
+	c <- a + b
+FinProcédure
+
+Toto <- Sum(1,2,3,4,5)
+
+Tata <- 4 // tata vaux 4 
+Appeler Sum(2, 3, Tata)
+// Tata vaudra 5 aprés l'appel de la procédure

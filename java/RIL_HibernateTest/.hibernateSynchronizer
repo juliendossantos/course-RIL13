@@ -1,0 +1,5 @@
+package=com.rila13.hibernate
+databaseUrl=jdbc:mysql://localhost/films
+driver=com.mysql.jdbc.Driver
+username=root
+ConfigurationFile=/R05_HibernateTest/src/hibernate.cfg.xml

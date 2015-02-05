@@ -1,0 +1,58 @@
+racine {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+enfant {
+	display: block;
+	padding: 20px 10px;
+}
+
+nom, lien, date, data {
+	display: block;
+}
+
+nom {
+	font-size: 26px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+lien {
+	font-size: 20px;
+}
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+	font-size: 20px;
+}
+
+td,
+th {
+	padding: 5px 10px;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #ededed;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #cccccc;
+}
+
+th {
+	border-bottom: 2px solid #545454;
+}
+
+tr td:nth-child(3),
+tr td:nth-child(5),
+tr td:nth-child(6),
+tr td:nth-child(7),
+tr td:nth-child(8) {
+	text-align: center;
+}
+

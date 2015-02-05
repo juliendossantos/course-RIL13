@@ -1,0 +1,576 @@
+//////////
+
+A. QCM :
+
+1. c
+2. a
+3. b
+4. b
+5. c
+6. a
+7. a
+8. c
+9. a
+10. b
+
+//////////
+
+B. Exercice rapide :
+
+a. Écrivez un programme qui permute les valeurs de deux variables lues au clavier
+
+Variables A, B, P en Numérique
+Début
+
+Ecrire "Veuillez saisir 2 valeurs"
+Lire A, B
+
+P <- A
+A <- B
+B <- P
+
+Fin
+
+/////////
+
+b. Écrivez un programme qui effectue une permutation circulaire vers la droite de 4 variables
+lues au clavier
+
+Variables A, B, C, D, P en Numérique
+Début
+
+Ecrire "Veuillez saisir 4 valeur"
+Lire A, B, C, D
+
+P <- D
+A <- P
+B <- A
+C <- B
+D <- C
+
+Fin
+
+//////
+
+c. Écrivez un programme qui donne le maximum de 3 nombres lus au clavier
+
+Variables n, nMax en Numérique
+Début
+
+nMax <- 0
+
+Pour i <- 0 à 3
+	
+	Ecrire "Veuillez saisir un nombre :"
+	Lire n
+	Si n > nMax ALORS
+		nMax <- n
+	FinSi
+
+i Suivant
+
+Ecrire "Le nombre maximum est", nMax
+
+Fin
+
+//////
+
+d. Écrivez un programme qui calcule la moyenne de 4 nombres lus au clavier et donne le
+minimum
+
+Variables n, nMax, Som, Moy en Numérique
+Début
+
+Som <- 0
+
+Pour i <- 0 à 4
+	
+	Ecrire "Veuillez saisir un nombre :"
+	Lire n
+	
+	Som <- Som + n
+	
+	Si i = 0 OU n < nMax ALORS
+		nMax <- n
+	FinSi
+
+i Suivant
+
+Moy <- Som / i
+
+Ecrire "La moyenne des nombres saisis est", Moy, "et le nombre minimum est", nMax
+
+Fin
+
+/////
+
+e. Écrivez un programme qui calcule le prix TTC d'un prix HT entré au clavier
+
+Variable prixHT, prixTTC, tauxTVA en Numérique
+Début
+	
+	écrire "Renseignez le prix Hors taxe :"
+	lire prixHT
+
+	écrire "Renseignez le taux de TVA (%):"
+	lire tauxTVA
+	
+	tauxTVA <- tauxTVA/100
+	prixTTC <- prixHT * (1 + tauxTVA)
+	écrire "Le prix total TTC est de : ", prixTTC
+
+Fin
+
+//////
+
+f. Écrivez un programme qui calcule le pourcentage d'un nombre, ce nombre ainsi que le
+pourcentage sont entrés au clavier.
+
+Variable nombre, pourcentage, resultat en Numérique
+Début
+
+Ecrire "Saisissez un nombre :"
+Lire nombre
+
+Ecrire "Saisissez un pourcentage :"
+Lire pourcentage
+
+pourcentage <- pourcentage/100
+resultat <- nombre * pourcentage
+
+Ecrire resultat
+
+Fin
+
+//////
+
+g. Écrivez un programme qui fournit une valeur en francs à partir d'un prix entré en euros
+
+Variables prix en Numérique
+Début
+
+Ecrire "Veuillez saisir votre prix en francs"
+Lire "prix"
+
+Ecrire "Votre prix en euros vaux :", prix * 6.5
+
+Fin
+
+//////
+
+h. Écrivez un programme qui donne une température en degrés Celsius à partir d'une
+température Fahrenheit (C = (5/9) * (F ‐ 32))
+
+Variable TempF en Numérique
+Début
+
+Ecrire "Veuillez saisir une température en Fahrenheit"
+Lire TempF
+
+Ecrire "Votre température en Celsius est de", (5/9) * (TempF-32)
+
+Fin
+
+//////
+
+i. Écrivez un programme qui donne la mention d'un étudiant en fonction de sa note entrée au
+clavier.
+
+Variable Note en Numérique
+Début
+
+Ecrire "Veuillez saisir la note :"
+Lire Note
+
+Si Note >= 16 Alors
+	Ecrire "Mention Trés Bien"
+Sinon Si Note >= 14 Alors
+	Ecrire "Mention Bien"
+Sinon Si Note >= 12 Alors
+	Ecrire "Mention Assez Bien"
+FinSi
+
+Fin
+
+//////
+
+j. Écrivez une fonction somme(x, y en entier) en entier qui retourne l'addition de
+x et y.
+
+Fonction Sum(x en Entier, y en Entier) en Entier
+	Renvoyer x + y
+FinFonction
+
+//////
+
+k. Écrivez une fonction minuscule minuscule(phrase en chaine) en chaine qui
+retourne la chaine en minuscule (sinon elle retourne la chaine phrase sans le modifier).
+
+Fonction minuscule(phrase en Chaine) en Chaine
+	
+	Maj <- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	Min <- "abcdefghijklmnopqrstuvwxyz"
+	
+	Pour i <- 0 à Len(phrase) - 1
+		
+		Lettre <- Mid(phrase, i, 1)
+		Find <- find(Maj, Lettre) 
+		
+		Si Find <> -1 Alors
+			Lettre <- Mid(Min, Find, 1)
+			Modif <- Vrai
+		FinSi
+
+		Chaine <- Chaine & Lettre
+
+	i Suivant
+
+	Renvoyer Chaine
+
+FinFonction
+
+Début
+Fin
+
+/////
+
+l. Écrivez une fonction compter_occurrences(phrase en chaine, mot en
+chaine) qui retourne le nombre d'occurrences de mot dans chaine.
+
+Fonction compter_occurrences(phrase en Chaine, mot en Chaine)
+	
+	nb <- 0
+
+	TantQue find(phrase, mot) > 0 
+		phrase <- Mid(phrase,find(phrase, mot)+Len(mot)-1, len(phrase)-1)
+	Fin TantQue
+
+	Renvoyer nb
+
+FinFonction
+
+//////
+
+m. Écrivez un algorithme qui prend en entrée le nom du fichier contenant l'annuaire, ainsi que le
+nom, prénom, numéro de téléphone et l'e‐mail d'une personne et qui sauvegarde le fichier
+annuaire en classant alphabétiquement la personne.
+NB : on suppose que les entrées de l'annuaire existant sont classées alphabétiquement.
+
+Structure Contact
+	Nom en Caractère * 20
+	Prénom en Caractère * 15
+	Tel en Caractère * 10
+	Mail en Caractère * 20
+Fin Structure
+
+Tableau Lignes() en Contact
+Variable Ligne, LigneFichier en Contact
+Variables i, j en Numérique
+Variable Insérer en Booléen
+Début
+
+Ecrire "Saisir le nom :"
+Lire Ligne.Nom
+
+Ecrire "Saisir le prénom :"
+Lire Ligne.Prénom
+
+Ecrire "Saisir le téléphone :"
+Lire Ligne.Tel
+
+Ecrire "Saisir l'e-mail :"
+Lire Ligne.Mail
+
+Insérer <- Faux
+i <- -1
+
+Ouvrir "annuaire.txt" sur 1 en Lecture
+Tantque Non EOF(1)
+	
+	i <- i + 1
+	Redim Lignes(i)
+	LireFichier 1, LigneFichier
+
+	Si LigneFichier.Nom > Ligne.Nom ET Insérer Alors	
+		Lignes(i) <- Ligne
+		Insérer <- Vrai
+		i <- i + 1
+		Redim Lignes(i)
+	FinSi
+
+	Lignes(i) <- LigneFichier
+
+FinTantQue
+Fermer 1
+
+Si Non(Insérer) Alors
+	i <- i + 1
+	Redim Lignes(i)
+	Lignes(i) <- Ligne
+FinSi
+
+Ouvrir "annuaire.txt" sur 2 en Ecriture
+Pour j <- 0 à i 
+	EcrireFichier 2, Lignes(j)
+j Suivant
+Fermer 2
+
+Fin
+
+//////
+
+n. Ecrivez un algorithme qui affiche le numéro de téléphone du nom d'une personne passé sur
+la ligne de commande. Si ce nom n'existe pas dans l'annuaire, il affichera un message
+d'erreur.
+
+Structure Contact
+	Nom en Caractère * 20
+	Prénom en Caractère * 15
+	Tel en Caractère * 10
+	Mail en Caractère * 20
+Fin Structure
+
+Variable Ligne, LigneFichier en Contact
+Variables i en Numérique
+Variable Nom en Caractére
+Variable Trouver en Booléen
+Début
+
+Ecrire "Saisir le nom de la personne"
+Lire Nom
+
+Trouver <- Faux
+
+Ouvrir "annuaire.txt" sur 1 en Lecture
+Tantque Non EOF(1)
+
+	LireFichier 1, LigneFichier
+
+
+	Si LigneFichier.Nom = Nom Alors
+		Ligne <- LigneFichier
+		Trouver <- Vrai
+	FinSi
+
+FinTantQue
+Fermer 1
+
+Si Trouver Alors
+	Ecrire "Le numéro de téléphone de", Nom, "est", Ligne.Tel
+Sinon
+	Ecrire "Impossible de trouver", Nom, "dans l'annuaire."
+FinSi
+
+Fin
+
+/////////
+
+C.
+
+/*
+
+Je n'ai pas eu le temps de traiter cet exercice.
+Je vais essayer de t'envoyer celui-ci plus tard.
+
+*/
+
+Structure Carte
+	Nom en Caractère * 5
+	Point en Entier * 2
+Fin Structure
+
+Procedure tirer_carte(Cartes en Référence, nbCartes en Référence, CarteTirer en Référence)
+
+	tirage <- Ent(Alea() * nbCartes)
+
+	CarteTirer() <- Cartes(tirage)
+
+	Pour i = tirage à nbCartes-2
+		Cartes(i) <- Cartes(i+1)
+	i Suivant
+
+	nbCartes <- nbCartes - 1
+	Redim Cartes(nbCartes)
+
+FinProcedure
+
+Function question() en Booléen
+	Choix <- ""
+
+	TantQue Choix <> "O" OU Choix <> "N"
+		
+		Ecrire "Voulez vous tirer une carte ? (O/N)"
+
+		Lire Reponse
+
+		Si Choix = "N" Alors
+			reponse <- Faux
+		Sinon Si Choix = "O" Alors
+			reponse <- Vrai
+		FinSi
+
+	FinTantQue
+
+	Renvoyer reponse
+
+FinFunction
+
+Function afficher_main(Mains en Carte, nbCarte en Entier) en Chaine
+	
+	outPut <- "La main contient"
+
+	Pour i <- 0 à nbCarte - 1
+		outPut <- outPut & Mains(i).Nom
+	i Suivant
+
+	Renvoyer outPut
+
+FinFunction
+
+Function afficher_score(Mains en Carte, nbCarte en Entier) en Entier
+
+	Score <- 0
+
+	Pour i <- 0 à nbCarte -1
+		Si Find("AS", Carte(i).Nom) <> -1 ET Score + Carte(i).Point > 21 Alors
+			Score <- Score + 1		
+		Sinon
+			Score <- Score + Carte(i).Point
+		FinSi
+	i Suivant
+
+	Renvoyer Score
+
+FinFunction
+
+Procedure verif_score(ScoreJ en Entier, ScoreB en Entier, jGagne en Référence, bGagne en Référence, jTire en Référence, bTire en Référence, finPartie en Référence)
+	
+
+	Si (NON(jTire) ET NON(bTire)) OU finPartie OU ScoreJ = 21 OU ScoreB = 21 Alors
+
+		Si ScoreJ > ScoreB Alors
+			jGagne <- Vrai
+		SinonSi ScoreB > ScoreJ Alors
+			bGagne <- Vrai
+		FinSi
+
+	FinSI
+
+FinProcedure
+
+Variables Cartes(52), MainJ(), MainB() en Carte
+Variables Carte, CarteTirer en Carte
+Variables nbCartes, carteB, carteJ, ScoreB, ScoreJ en Entier
+Variables jTire, bTire, jGagne, bGagne, finPartie, nPartie en Booléen
+Variables Reponse en Chaine
+Début
+
+nPartie <- Vrai
+
+TantQue nPartie
+
+	nPartie <- Faux
+	finPartie <- Faux
+	jTire <- Vrai
+	bTire <- Vrai
+	nbCartes <- -1
+	carteB <- 0
+	carteJ <- 0
+	Reponse <- ""
+
+	Ouvrir "jeux_cates.txt" sur 1 en Lecture
+	Tantque Non EOF(1)
+		
+		LireFichier 1, Carte
+
+		nbCartes <- nbCartes + 1
+		Cartes(nbCartes) <- Carte
+
+	FinTantQue
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteB <- carteB + 1
+	Redim MainB(carteB)
+	MainB(carteB-1) <- CarteTirer
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteB <- carteB + 1
+	Redim MainB(carteB)
+	MainB(carteB-1) <- CarteTirer
+
+	ScoreB <- afficher_score(MainB, carteB)
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteJ <- carteJ + 1
+	Redim MainJ(carteJ)
+	MainJ(carteJ-1) <- CarteTirer
+
+	Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+	carteJ <- carteJ + 1
+	Redim MainJ(carteJ)
+	MainJ(carteJ-1) <- CarteTirer
+
+	ScoreJ <- afficher_score(MainJ, carteJ)
+
+	Ecrire afficher_main(MainB, 1)
+	Ecrire afficher_main(MainJ, carteJ)
+	Ecrire ScoreJ
+
+	Appeler verif_score(ScoreJ, ScoreB, jGagne, bGagne, jTire, bTire, finPartie)
+
+	TantQue NON(finPartie)
+		
+		Si ScoreB >= 17 Alors
+			bTire <- false
+		FinSi
+
+		jTire <- question()
+
+		Si bTire Alors
+			Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+			carteJ <- carteJ + 1
+			Redim MainJ(carteJ)
+			MainJ(carteJ-1) <- CarteTirer
+			ScoreB <- afficher_score(MainB, carteB)
+		FinSi
+
+		Si jTire Alors
+			Appel tirer_carte(Cartes, nbCartes, CarteTirer)
+			carteJ <- carteJ + 1
+			Redim MainJ(carteJ)
+			MainJ(carteJ-1) <- CarteTirer
+			ScoreJ <- afficher_score(MainJ, carteJ)
+		FinSi
+
+		Ecrire afficher_main(MainJ, carteJ)
+		Ecrire ScoreJ
+		
+		Appeler verif_score(ScoreJ, ScoreB, jGagne, bGagne, jTire, bTire, finPartie)
+
+	FinTantQue
+
+	Ecrire afficher_main(MainB, carteB)
+
+	Si jGagne Alors
+		Ecrire "Vous avez gagné avec un score de", ScoreJ
+	Sinon Si bGagne Alors
+		Ecrire "La banque gagne avec un score de", ScoreB
+	FinSi
+
+
+	Tanque Reponse <> "O" OU Reponse <> "N"
+		
+		Ecrire "Voulez-vous faire une nouvelle partie ? (O/N)"
+		Lire Reponse
+
+		Si Reponse = "O" Alors
+			nPartie <- Vrai
+		SinonSi Reponse = "N" Alors
+			nPartie <- faux
+		FinSi
+
+	FinTantQue
+
+FinTantQue
+
+Fin
